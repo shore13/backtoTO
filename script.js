@@ -3,6 +3,7 @@
 const firebaseConfig = {
   apiKey: "AIzaSyDXpH-0R_9mZu3BsNLeXhLTp1kODCNgPgw",
   authDomain: "backtoto.firebaseapp.com",
+  databaseURL: "https://backtoto-default-rtdb.europe-west1.firebasedatabase.app/",
   projectId: "backtoto",
   storageBucket: "backtoto.firebasestorage.app",
   messagingSenderId: "625307831560",
