@@ -1,0 +1,166 @@
+:root {
+    --bg-color: #050505; /* Nero profondo */
+    --text-primary: #FFFFFF; /* Bianco puro per massimo contrasto */
+    --text-secondary: #AAAAAA; /* Grigio per i testi minori */
+    --divider-color: #333333;
+    
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* HERO SECTION (Immagine a tutto schermo) */
+.hero {
+    position: relative;
+    height: 100vh; /* Occupa esattamente il 100% dell'altezza dello schermo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* UPDATE: Sfondo con immagine notturna di Torino con gradiente scuro sopra per far leggere il testo */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), 
+                url('image_3.png') no-repeat center center/cover;
+}
+
+.hero-content {
+    z-index: 2;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin: 0 0 2rem 0;
+}
+
+.subtitle-bottom {
+    font-size: 0.9rem;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* IL TIMER NELLA CORNICE */
+#timer-wrapper {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Cornice sottile e semi-trasparente */
+    padding: 1.5rem 3rem;
+}
+
+#timer {
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: 0.15em; /* Spaziatura enorme tra i numeri */
+    line-height: 1;
+    margin-right: -0.15em; /* Compensazione per centrare perfettamente col letter-spacing */
+}
+
+/* LAYOUT PRINCIPALE SOTTO L'IMMAGINE */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+section {
+    margin-bottom: 5rem;
+}
+
+/* INTESTAZIONI */
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-header h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin: 0 0 1rem 0;
+}
+
+.divider {
+    height: 1px;
+    width: 50px;
+    background-color: var(--text-secondary);
+    margin: 0 auto;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border: none; /* Rimosso qualsiasi bordo laterale o perimetrale */
+    background-color: #09090b; /* Colore di sfondo che si fonde perfettamente con la mappa nera */
+    margin-bottom: 1.5rem;
+}
+
+.status-text {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* PROGRAMMA */
+#schedule {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#schedule li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.date {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+}
+
+.event-name {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+}
+
+/* RESPONSIVE PER TELEFONO */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8rem; }
+    #timer { font-size: 2.5rem; }
+    #timer-wrapper { padding: 1rem 1.5rem; }
+    #schedule li {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+}

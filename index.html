@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Arrivo a Torino</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="subtitle">GIULIO</div>
+            <h1>S T A &nbsp; A R R I V A N D O</h1>
+            <div class="subtitle-bottom">STARTS IN</div>
+            
+            <div id="timer-wrapper">
+                <div id="timer">-- : -- : --</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="map-section">
+            <div class="section-header">
+                <h3>Posizione Attuale</h3>
+                <div class="divider"></div>
+            </div>
+            <div id="map"></div>
+            <p id="travel-status" class="status-text">Calcolo della traiettoria...</p>
+        </section>
+
+        <section id="calendar-section">
+            <div class="section-header">
+                <h3>Programma</h3>
+                <div class="divider"></div>
+            </div>
+            <ul id="schedule">
+                <li>
+                    <span class="date">DOM 24/05 — 18:00</span>
+                    <span class="event-name">APERITIVO</span>
+                </li>
+                <li>
+                    <span class="date">DOM 24/05 — 20:00</span>
+                    <span class="event-name">CENA DI BENVENUTO</span>
+                </li>
+                <li>
+                    <span class="date">LUN 25/05 — MATTINA</span>
+                    <span class="event-name">MUSEO DELL'AUTOMOBILE</span>
+                </li>
+                <li>
+                    <span class="date">LUN 25/05 — PRANZO</span>
+                    <span class="event-name">PRANZO ZONA POLI</span>
+                </li>
+                <li>
+                    <span class="date">LUN 25/05 — POMERIGGIO</span>
+                    <span class="event-name">TOUR DEL POLI</span>
+                </li>
+                <li>
+                    <span class="date">LUN 25/05 — 16:00/17:00</span>
+                    <span class="event-name">RUNNING 4KM</span>
+                </li>
+                <li>
+                    <span class="date">LUN 25/05 — SERA</span>
+                    <span class="event-name">CENA (WORK IN PROGRESS)</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
