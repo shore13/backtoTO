@@ -1,3 +1,54 @@
+// --- CONFIGURAZIONE E INIZIALIZZAZIONE FIREBASE ---
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDXpH-0R_9mZu3BsNLeXhLTp1kODCNgPgw",
+  authDomain: "backtoto.firebaseapp.com",
+  projectId: "backtoto",
+  storageBucket: "backtoto.firebasestorage.app",
+  messagingSenderId: "625307831560",
+  appId: "1:625307831560:web:db022bc7819f08d28bb0bd"
+};
+
+// Inizializza Firebase
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+// Funzione che viene attivata quando si clicca su [ + ]
+function joinEvent(eventId) {
+    const name = prompt("Inserisci il tuo nome per unirti all'attività:");
+    
+    if (name && name.trim() !== "") {
+        const cleanName = name.trim().toUpperCase();
+        
+        // Salviamo il nome nel database sotto il percorso 'eventi/id_evento/nome'
+        database.ref('eventi/' + eventId).push(cleanName);
+    }
+}
+
+// Restiamo in ascolto dei cambiamenti del database in tempo reale
+database.ref('eventi').on('value', (snapshot) => {
+    const data = snapshot.val() || {};
+    
+    // Resettiamo prima tutti i contenitori grafici dei partecipanti
+    document.querySelectorAll('.participants').forEach(el => el.innerText = "");
+    
+    // Cicliamo tra gli eventi che hanno ricevuto adesioni
+    Object.keys(data).forEach(eventId => {
+        const participantsObject = data[eventId];
+        // Estraiamo i nomi dall'oggetto di Firebase e li uniamo con una virgola
+        const namesArray = Object.values(participantsObject);
+        const participantsText = "PARTECIPANTI: " + namesArray.join(', ');
+        
+        // Iniettiamo i nomi nell'elemento HTML corretto
+        const container = document.getElementById('parts-' + eventId);
+        if (container) {
+            container.innerText = participantsText;
+        }
+    });
+});
+
+// --- DA QUI IN POI SEGUE IL TUO VECCHIO CODICE (COUNTDOWN E MAPPA) ---
+
 // --- CONFIGURAZIONE VIAGGIO ---
 // Tappa 1: Volo Stoccolma - Trieste
 const departureFlight = new Date('2026-05-23T09:50:00+02:00').getTime(); // Stoccolma
