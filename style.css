@@ -48,10 +48,11 @@ body {
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.4em; /* Ricrea l'effetto degli spazi larghi automaticamente */
     margin: 0 0 2rem 0;
+    white-space: nowrap; /* Obbliga il testo a stare su una sola riga */
 }
 
 .subtitle-bottom {
@@ -155,7 +156,10 @@ section {
 
 /* RESPONSIVE PER TELEFONO */
 @media (max-width: 768px) {
-    h1 { font-size: 2.8rem; }
+    h1 { 
+        font-size: 6vw; /* Il font diventa elastico: si rimpicciolisce in base alla larghezza dello schermo! */
+        letter-spacing: 0.2em; 
+    }
     #timer { font-size: 2.5rem; }
     #timer-wrapper { padding: 1rem 1.5rem; }
     #schedule li {
