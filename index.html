@@ -42,37 +42,61 @@
                 <div class="divider"></div>
             </div>
             <ul id="schedule">
-                <li>
-                    <span class="date">DOM 24/05 — 18:00</span>
-                    <span class="event-name">APERITIVO</span>
+                <li data-id="aperitivo">
+                    <div class="event-info">
+                        <span class="date">DOM 24/05 — 18:00</span>
+                        <span class="event-name">APERITIVO <button class="join-btn" onclick="joinEvent('aperitivo')">[ + ]</button></span>
+                    </div>
+                    <div class="participants" id="parts-aperitivo"></div>
                 </li>
-                <li>
-                    <span class="date">DOM 24/05 — 20:00</span>
-                    <span class="event-name">CENA DI BENVENUTO</span>
+                <li data-id="cena_dom">
+                    <div class="event-info">
+                        <span class="date">DOM 24/05 — 20:00</span>
+                        <span class="event-name">CENA DI BENVENUTO <button class="join-btn" onclick="joinEvent('cena_dom')">[ + ]</button></span>
+                    </div>
+                    <div class="participants" id="parts-cena_dom"></div>
                 </li>
-                <li>
-                    <span class="date">LUN 25/05 — MATTINA</span>
-                    <span class="event-name">MUSEO DELL'AUTOMOBILE</span>
+                <li data-id="museo">
+                    <div class="event-info">
+                        <span class="date">LUN 25/05 — MATTINA</span>
+                        <span class="event-name">MUSEO DELL'AUTOMOBILE <button class="join-btn" onclick="joinEvent('museo')">[ + ]</button></span>
+                    </div>
+                    <div class="participants" id="parts-museo"></div>
                 </li>
-                <li>
-                    <span class="date">LUN 25/05 — PRANZO</span>
-                    <span class="event-name">PRANZO ZONA POLI</span>
+                <li data-id="pranzo_poli">
+                    <div class="event-info">
+                        <span class="date">LUN 25/05 — PRANZO</span>
+                        <span class="event-name">PRANZO AREA POLITECNICO <button class="join-btn" onclick="joinEvent('pranzo_poli')">[ + ]</button></span>
+                    </div>
+                    <div class="participants" id="parts-pranzo_poli"></div>
                 </li>
-                <li>
-                    <span class="date">LUN 25/05 — POMERIGGIO</span>
-                    <span class="event-name">TOUR DEL POLI</span>
+                <li data-id="tour_poli">
+                    <div class="event-info">
+                        <span class="date">LUN 25/05 — POMERIGGIO</span>
+                        <span class="event-name">TOUR DEL POLITECNICO <button class="join-btn" onclick="joinEvent('tour_poli')">[ + ]</button></span>
+                    </div>
+                    <div class="participants" id="parts-tour_poli"></div>
                 </li>
-                <li>
-                    <span class="date">LUN 25/05 — 16:00/17:00</span>
-                    <span class="event-name">RUNNING 4KM</span>
+                <li data-id="corsa">
+                    <div class="event-info">
+                        <span class="date">LUN 25/05 — 16:00</span>
+                        <span class="event-name">SESSIONE DI CORSA 4KM <button class="join-btn" onclick="joinEvent('corsa')">[ + ]</button></span>
+                    </div>
+                    <div class="participants" id="parts-corsa"></div>
                 </li>
-                <li>
-                    <span class="date">LUN 25/05 — SERA</span>
-                    <span class="event-name">CENA (WORK IN PROGRESS)</span>
+                <li data-id="cena_lun">
+                    <div class="event-info">
+                        <span class="date">LUN 25/05 — SERA</span>
+                        <span class="event-name">CENA (WORK IN PROGRESS) <button class="join-btn" onclick="joinEvent('cena_lun')">[ + ]</button></span>
+                    </div>
+                    <div class="participants" id="parts-cena_lun"></div>
                 </li>
             </ul>
         </section>
     </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="script.js"></script>
