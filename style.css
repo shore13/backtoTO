@@ -168,3 +168,54 @@ section {
         text-align: center;
     }
 }
+
+/* STILE AGGIUNTIVO PER PARTECIPANTI */
+#schedule li {
+    display: flex;
+    flex-direction: column; /* Cambiato per accogliere i partecipanti sotto il testo */
+    align-items: stretch;
+    padding: 1.5rem 0;
+}
+
+.event-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.join-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0 0 0 10px;
+    transition: color 0.2s;
+}
+
+.join-btn:hover {
+    color: var(--text-primary);
+}
+
+.participants {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    text-align: right;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .event-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .participants {
+        text-align: center;
+        margin-top: 0.8rem;
+    }
+}
